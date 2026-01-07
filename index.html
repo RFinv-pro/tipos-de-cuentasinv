@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Tipos de Cuentas</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box;font-family:Inter,sans-serif}
+body{margin:0;background:#f4f6f9;color:#1f2937}
+section{padding:90px 8%}
+h1,h2,h3{margin-bottom:14px}
+p{color:#4b5563;line-height:1.65}
+
+.fade{opacity:0;transform:translateY(30px);transition:all .8s ease}
+.fade.visible{opacity:1;transform:none}
+
+/* HERO */
+.hero{
+background:
+linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+url("https://images.unsplash.com/photo-1520607162513-77705c0f0d4a") center/cover;
+color:#fff;
+text-align:center;
+}
+.hero p{color:#e5e7eb;font-size:18px}
+.hero h1{font-size:46px}
+
+/* GENERALES */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px}
+.card{background:#fff;border-radius:16px;padding:32px;box-shadow:0 15px 35px rgba(0,0,0,.06)}
+
+.icon-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px}
+.icon-box{background:#fff;padding:28px;border-radius:16px;box-shadow:0 12px 30px rgba(0,0,0,.05)}
+
+.silver{background:#eef3f7}
+.gold{background:#f6f3ea}
+.vip{background:#eef8fb}
+
+/* SIMULADOR */
+.simulator{max-width:900px;margin:auto}
+.sim-box{background:#fff;border-radius:20px;padding:40px;box-shadow:0 20px 45px rgba(0,0,0,.08)}
+
+label{display:block;margin-top:22px;font-weight:500}
+select,input{width:100%;padding:14px;margin-top:6px;border-radius:10px;border:1px solid #d1d5db}
+
+button{
+margin-top:32px;width:100%;padding:16px;
+border:none;border-radius:12px;
+background:#2563eb;color:#fff;font-size:16px;
+cursor:pointer
+}
+
+.results{
+margin-top:30px;
+padding:24px;
+border-radius:14px;
+background:#f9fafb
+}
+
+/* PROGRESIÓN */
+.progression{display:flex;gap:24px}
+.progression div{
+flex:1;
+text-align:center;
+padding:32px;
+border-radius:18px;
+background:#fff;
+box-shadow:0 12px 30px rgba(0,0,0,.06)
+}
+
+/* TESTIMONIOS */
+.testimonial{
+background:#fff;
+border-left:4px solid #2563eb;
+padding:22px;
+border-radius:12px;
+margin-bottom:20px
+}
+</style>
+</head>
+
+<body>
+
+<!-- 1 -->
+<section class="hero fade">
+<h1>Tipos de Cuentas</h1>
+<p>Estructuras diseñadas para una gestión de capital profesional, progresiva y protegida.</p>
+</section>
+
+<!-- 2 -->
+<section class="fade">
+<h2>¿Por qué elegir una estructura de cuenta?</h2>
+<div class="icon-grid">
+<div class="icon-box"><strong>Gestión estructurada</strong><br>Capital administrado bajo criterios definidos.</div>
+<div class="icon-box"><strong>Control del riesgo</strong><br>Exposición alineada al perfil del inversor.</div>
+<div class="icon-box"><strong>Diversificación</strong><br>Acceso progresivo a distintos mercados.</div>
+<div class="icon-box"><strong>Protección de capital</strong><br>Mecanismos de cobertura ante escenarios adversos.</div>
+</div>
+</section>
+
+<!-- 3 -->
+<section class="fade">
+<h2>Tipos de Cuenta</h2>
+<div class="cards">
+
+<div class="card silver">
+<h3>Cuenta Silver</h3>
+<p><strong>Desde:</strong> 10.000 €</p>
+<p><strong>Seguro de capital:</strong> 25%</p>
+<p>
+La cuenta segregada permite que el capital del cliente se mantenga separado de los fondos operativos.
+En caso de eventos adversos, el sistema de cobertura actúa para proteger hasta el 25% del capital en riesgo,
+reduciendo el impacto de escenarios extremos y aportando estabilidad al inversor.
+</p>
+</div>
+
+<div class="card gold">
+<h3>Cuenta Gold</h3>
+<p><strong>Desde:</strong> 40.000 €</p>
+<p><strong>Seguro de capital:</strong> 38%</p>
+<p>
+Esta estructura amplía la protección mediante mecanismos de cobertura más avanzados.
+El capital se gestiona de forma independiente y, ante riesgos significativos,
+el seguro puede cubrir hasta el 38% del capital comprometido.
+</p>
+</div>
+
+<div class="card vip">
+<h3>Cuenta VIP</h3>
+<p><strong>Desde:</strong> 80.000 €</p>
+<p><strong>Seguro de capital:</strong> 46%</p>
+<p>
+La cuenta VIP ofrece el nivel más alto de protección y diversificación.
+Gracias a su estructura segregada y protocolos avanzados de cobertura,
+el sistema puede absorber hasta el 46% de posibles pérdidas en situaciones excepcionales.
+</p>
+</div>
+
+</div>
+</section>
+
+<!-- 4 -->
+<section class="fade">
+<div class="simulator">
+<div class="sim-box">
+
+<h2 style="text-align:center">Simulador</h2>
+
+<label>Tipo de cuenta</label>
+<select id="account">
+<option value="silver">Cuenta Silver</option>
+<option value="gold">Cuenta Gold</option>
+<option value="vip">Cuenta VIP</option>
+</select>
+
+<label>Capital (€)</label>
+<input type="number" id="capital" value="10000">
+
+<label>Nivel de rentabilidad</label>
+<select id="level">
+<option value="min">Mínima</option>
+<option value="mid">Intermedia</option>
+<option value="max">Máxima</option>
+</select>
+
+<label>Horizonte</label>
+<select id="horizon">
+<option value="day">Diario</option>
+<option value="week">Semanal</option>
+<option value="month">Mensual</option>
+</select>
+
+<button onclick="calculate()">Calcular simulación</button>
+
+<div class="results" id="results"></div>
+
+</div>
+</div>
+</section>
+
+<!-- 5 -->
+<section class="fade">
+<h2>Metodología de gestión</h2>
+<div class="cards">
+<div class="card">Análisis continuo de mercado y contexto macroeconómico.</div>
+<div class="card">Gestión activa del riesgo y control de exposición.</div>
+<div class="card">Ejecución disciplinada basada en escenarios definidos.</div>
+<div class="card">Revisión periódica de resultados y ajustes estratégicos.</div>
+</div>
+</section>
+
+<!-- 6 -->
+<section class="fade">
+<h2>Opiniones de inversores</h2>
+<div class="testimonial">“La estructura de cuenta permitió una gestión mucho más ordenada del capital.”<br><small>Inversor privado – Europa</small></div>
+<div class="testimonial">“Aporta tranquilidad en escenarios de alta volatilidad.”<br><small>Cliente institucional</small></div>
+</section>
+
+<!-- 7 -->
+<section class="fade" style="background:#eef2f7">
+<p style="max-width:900px;margin:auto;font-size:18px;text-align:center">
+Elegir el tipo de cuenta adecuado es un paso clave para optimizar tu estrategia financiera.
+A medida que accedes a mayores niveles de capital, diversificación y protección,
+se abren nuevas oportunidades para potenciar tu rentabilidad y gestionar el riesgo de forma más eficiente.
+Una estructura bien definida marca la diferencia entre invertir y evolucionar financieramente.
+</p>
+</section>
+
+<script>
+function calculate(){
+const acc=document.getElementById('account').value
+const cap=parseFloat(document.getElementById('capital').value)
+const lvl=document.getElementById('level').value
+const hor=document.getElementById('horizon').value
+
+const min={silver:10000,gold:40000,vip:80000}
+if(cap<min[acc]){alert("Capital mínimo no alcanzado");return}
+
+const rates={
+silver:{day:{min:2,mid:4,max:8},week:{min:10,mid:20,max:40},month:{min:40,mid:80,max:160}},
+gold:{day:{min:3,mid:6,max:9},week:{min:15,mid:30,max:45},month:{min:60,mid:120,max:180}},
+vip:{day:{min:6,mid:9,max:11},week:{min:30,mid:45,max:55},month:{min:120,mid:180,max:220}}
+}
+
+const pct=rates[acc][hor][lvl]
+const gain=cap*pct/100
+const total=cap+gain
+const insurance={silver:25,gold:38,vip:46}
+
+document.getElementById('results').innerHTML=`
+<p><strong>Rendimiento aplicado:</strong> ${pct}%</p>
+<p><strong>Ganancia estimada:</strong> €${gain.toFixed(2)}</p>
+<p><strong>Capital final estimado:</strong> €${total.toFixed(2)}</p>
+<p>
+<strong>Cuenta segregada y seguro:</strong><br>
+El capital se gestiona de forma independiente y cuenta con un mecanismo de cobertura
+que puede proteger hasta el ${insurance[acc]}% del capital en riesgo.
+</p>`
+}
+
+const obs=new IntersectionObserver(e=>e.forEach(x=>x.isIntersecting&&x.target.classList.add("visible")),{threshold:.2})
+document.querySelectorAll('.fade').forEach(el=>obs.observe(el))
+</script>
+
+</body>
+</html>
